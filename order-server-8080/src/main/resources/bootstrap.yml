@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: order-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8849
+        username: nacos
+        password: 1234
+        ip: 127.0.0.1
+        enabled: true
+      config:
+        namespace: c3cbf42c-aef8-43d0-a6e0-14b8b8ce96eb
+        server-addr: 127.0.0.1:8849
+        extension-configs:
+        - dataId: mysql.properties
+          group: DB_GROUP
+          refresh: true
+server:
+  port: 8080
+  servlet:
+    context-path: /order
+ribbon:
+  ReadTimeout: 5000 #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
+  ConnectTimeout: 5000 #指的是建立连接后从服务器读取到可用资源所用的时间

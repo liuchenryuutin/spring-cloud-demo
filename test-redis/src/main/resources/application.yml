@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: test
+  redis:
+    database: 0
+    host: centos8
+    port: 6379
+    password: 1234
+    ssl: false
+    timeout: 1s
+    redisson:
+      file: classpath:redisson.yml
+logging:
+  level:
+    root: INFO

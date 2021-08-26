@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: auth-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8849
+        username: nacos
+        password: 1234
+        enabled: true
+  redis:
+    database: 0
+    host: centos8
+    port: 6379
+    password: 1234
+    ssl: false
+    timeout: 1s
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/db_oauth?serverTimezone=GMT
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8090
+  servlet:
+    context-path: /
+logging:
+  level:
+    root: INFO
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

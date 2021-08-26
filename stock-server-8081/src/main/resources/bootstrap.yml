@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: stock-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: 1234
+        ip: 127.0.0.1
+      config:
+        namespace: c3cbf42c-aef8-43d0-a6e0-14b8b8ce96eb
+        server-addr: 127.0.0.1:8848
+        extension-configs:
+        - dataId: mysql.properties
+          group: DB_GROUP
+          refresh: true
+  redis:
+    database: 0
+    host: centos8
+    port: 6379
+    password: 1234
+    ssl: false
+    timeout: 1s
+    redisson:
+      file: classpath:redisson.yml
+server:
+  port: 8081
+  servlet:
+    context-path: /stock
+logging:
+  level:
+    root: INFO
